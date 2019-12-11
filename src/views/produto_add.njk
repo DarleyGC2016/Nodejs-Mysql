@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+
+{% block pagina %}
+
+  <h1 class="page-header">Cadastro de Produto</h1>
+  <div class="col-md-6">
+
+  <form action={{action}} method="post">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do produto">
+    </div>
+
+    <div class="form-group">
+    <label for="qtd_kg">Quantidade do Produto em kg</label>
+      <input type="number" class="form-control" name="qtd_kg" id="qtd_kg" placeholder="Digite a quantidade do Produto em kg.">
+    </div>
+
+    <div class="form-group">
+        <label for="qtd_prod">Quantidade do Produto</label>
+        <input type="number" class="form-control" name="qtd_prod" id="qtd_prod" placeholder="Digite a Quantidade do Produto">
+    </div>
+
+    <div class="form-group">
+        <label for="qtd_scs">Quantidade do SCS</label>
+        <input type="number" class="form-control" name="qtd_scs" id="qtd_scs" placeholder="Digite a Quantidade do SCS">
+    </div>  
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <a href="/" class="btn btn-secondary">Voltar</a>
+  </form>
+</div>
+
+{% endblock %}

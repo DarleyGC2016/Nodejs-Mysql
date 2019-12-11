@@ -1,0 +1,53 @@
+{% extends "layout.njk" %}
+
+{% block pagina %}
+
+  <h1 class="page-header">Cadastro de Usuário</h1>
+  <div class="col-md-6">
+
+  <form action={{action}} method="post">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo">
+    </div>
+
+    <div class="form-group">
+      <label for="login">Login</label>
+      <input type="text" class="form-control" name="login" id="login" placeholder="Digite login simples">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="fulano@dominio.com">
+    </div>
+  
+    <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" name="senha" id="senha" placeholder="senha de acesso">
+    </div>
+
+    <div class="form-group">
+        <label for="confirmaSenha">Confirmar Senha</label>
+        <input type="password" class="form-control" name="confirmaSenha" id="confirmaSenha" placeholder="confirmação da senha de acesso">
+    </div>
+
+    {% if isAuth %}
+      <input type="hidden" name="ativo" id="ativo" value="1">
+    {% else %}
+      <input type="hidden" name="ativo" id="ativo" value="0">
+      <div>
+        <p class="text-danger">
+          <small>
+            <i class="fas fa-exclamation-triangle"></i>
+            Usuário será ativado após análise dos dados
+          </small>
+        </p>
+      </div>
+    {% endif %}
+    
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <a href="/" class="btn btn-secondary">Voltar</a>
+  </form>
+</div>
+
+{% endblock %}

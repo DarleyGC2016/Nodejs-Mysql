@@ -1,0 +1,35 @@
+{% extends "layout.njk"  %}
+
+{% block pagina %}
+
+<h1 class="page-header">Relação de Produtos</h1>
+
+    <div class="container-fluid">
+      <table id="mytable" class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Qtd. Produtos</th> 
+            <th scope="col">Qtd. Kg</th>              
+            <th scope="col">Qtd. SCS</th>    
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for produto in produtos %}
+          <tr>
+            <td>{{produto.id_produto}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.qtd_prod}}</td>
+            <td>{{produto.qtd_kg}}</td>            
+            <td>{{produto.qtd_scs}}</td>
+          </tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+
+    </div>
+    {% include "perfTable.njk" %}
+{% endblock %}
